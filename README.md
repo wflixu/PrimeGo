@@ -1,20 +1,26 @@
-# PrimeGin
+# PrimeGo
 
-PrimeGin 是一个基于 Go 和 Vue 的全栈项目，后端使用 Hertz + Gorm框架，前端使用 Vue.js + primevue。
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/yourusername/PrimeGo/blob/main/LICENSE)
 
-## 项目简介
+PrimeGo 是一个基于 Go 和 Vue 的全栈项目模板，后端使用 Hertz + GORM 框架，前端使用 Vue.js + PrimeVue。
 
-PrimeGin 是一个全栈开发模板，旨在快速构建现代 Web 应用程序。后端采用 Hertz 框架，结合 PostgreSQL 和 GORM 实现高效的数据处理；前端基于 Vue.js，提供响应式用户界面。
+## 功能特性
+
+- 后端使用 Hertz 高性能 HTTP 框架
+- 集成 GORM 进行数据库操作
+- 支持 PostgreSQL 数据库
+- 前端使用 Vue 3 + TypeScript
+- 集成 PrimeVue UI 组件库
+- 开箱即用的用户认证模块
+- 完善的 API 文档生成
+- 前后端分离架构
+- 支持 Docker 部署
 
 ## 项目结构
 
 
 ```
-# 项目目录结构
-
-```
 PrimeGin/
-
 ├── biz/                      # 后端业务逻辑目录
 │   ├── handler/              # HTTP请求处理器
 │   │   ├── hello/            # hello示例处理器
@@ -46,7 +52,7 @@ PrimeGin/
 │   └── views/                # 页面视图
 │       ├── AboutView.vue     # 关于页面
 │       └── HomeView.vue      # 首页
-├── vite.config.ts            # Vite构建配置
+└── vite.config.ts            # Vite构建配置
 ```
 
 ## 目录功能说明
@@ -56,58 +62,81 @@ PrimeGin/
 - **public/**: 公共静态资源，如favicon等
 - **script/**: 项目初始化和管理脚本
 - **config文件**: 包含项目各种配置，如TypeScript、Vite等
-```
+
 
 ## 快速开始
 
-### 后端
+### 系统要求
 
-后端使用 Hertz 框架，数据库使用 PostgreSQL，ORM 使用 GORM。
+- Go 1.18+
+- Node.js 16+
+- PostgreSQL 12+ 或 MySQL 8.0+
 
-#### 启动后端
+### 安装
 
-1. 安装依赖：
+1. 克隆仓库
    ```bash
-   go mod tidy
+   git clone https://github.com/yourusername/PrimeGo.git
+   cd PrimeGo
    ```
 
-2. 配置数据库连接：
-   修改 `internal/config/config.go` 文件中的数据库配置。
-
-3. 启动服务：
+2. 安装后端依赖
    ```bash
-   go run cmd/server/main.go
+   go mod download
    ```
 
-#### 后端目录说明
-
-- `controllers/`：存放业务逻辑控制器。
-- `models/`：定义数据库模型。
-- `route/`：路由初始化。
-- `config/`：存放配置文件。
-- `middleware/`：定义中间件。
-
-### 前端
-
-前端使用 Vue.js，位于 `src/` 目录。
-
-#### 启动前端
-
-1. 安装依赖：
+3. 安装前端依赖
    ```bash
-   cd frontend
    npm install
    ```
 
-2. 启动开发服务器：
+### 配置
+
+1. 复制示例配置文件
    ```bash
-   npm run serve
+   cp config.example.yaml config.yaml
    ```
 
-#### 前端目录说明
+2. 修改 `config.yaml` 中的数据库配置
 
-- `src/`：存放前端源码，包括组件、路由等。
-- `public/`：存放静态资源。
+### 运行
+
+启动后端服务
+```bash
+go run main.go
+```
+
+启动前端开发服务器
+```bash
+npm run dev
+```
+
+### 生产环境部署
+
+使用 Docker 部署
+```bash
+docker-compose up -d
+```
+
+## 贡献指南
+
+我们欢迎任何形式的贡献！在提交 Pull Request 前请确保：
+
+1. Fork 仓库并创建新分支
+2. 遵循代码风格规范
+3. 添加适当的测试
+4. 更新相关文档
+5. 提交清晰的 commit 信息
+
+### 代码风格
+
+- 后端代码遵循标准 Go 代码风格
+- 前端代码遵循 Vue 风格指南
+- 提交信息遵循 Conventional Commits 规范
+
+## 许可证
+
+MIT License © 2023-Present YourName
 
 ## 贡献指南
 
