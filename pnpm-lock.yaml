@@ -48,6 +48,9 @@ importers:
       jsdom:
         specifier: ^26.0.0
         version: 26.0.0
+      just:
+        specifier: ^0.1.8
+        version: 0.1.8
       npm-run-all2:
         specifier: ^7.0.2
         version: 7.0.2
@@ -1121,6 +1124,10 @@ packages:
 
   jsonfile@6.1.0:
     resolution: {integrity: sha512-5dgndWOriYSm5cnYaJNhalLNDKOqFwyDB/rr1E9ZsGciGvKPs8R2xYGCacuf3z6K1YKDz182fd+fY3cn3pMqXQ==}
+
+  just@0.1.8:
+    resolution: {integrity: sha512-MthnDq23szARlHgY638t17BLLWa/4S8NbN6LlUzSGzG7hKLlC2M+gzd4rxcSixOlM530LnsRgbe10b2/EPbsQg==}
+    engines: {node: '>= 0.4.0'}
 
   kolorist@1.8.0:
     resolution: {integrity: sha512-Y+60/zizpJ3HRH8DCss+q95yr6145JXZo46OTpFvDZWLfRCE4qChOyk1b26nMaNpfHHgxagk9dXT5OP0Tfe+dQ==}
@@ -2703,6 +2710,8 @@ snapshots:
       universalify: 2.0.1
     optionalDependencies:
       graceful-fs: 4.2.11
+
+  just@0.1.8: {}
 
   kolorist@1.8.0: {}
 

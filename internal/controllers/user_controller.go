@@ -1,23 +1,17 @@
 package controllers
 
 import (
-	"PrimeGin/internal/models"
+	"PrimeGin/internal/services"
 	"PrimeGin/internal/utils"
-	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
 
-type UserController struct{}
+type UserController struct {
+	UserService *services.UserService
+}
 
-func (uc *UserController) GetUsers(c *gin.Context) {
-	var users []models.User
-	result := utils.DB.Preload("Roles").Find(&users)
-
-	if result.Error != nil {
-		c.JSON(http.StatusInternalServerError, gin.H{"error": result.Error.Error()})
-		return
-	}
-
-	c.JSON(http.StatusOK, users)
+func (ctrl *UserController) GetUsers(c *gin.Context) {
+	users, err := ctrl.UserService.GetUsers()
+	utils.Response(c, users, err)
 }
