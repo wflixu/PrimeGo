@@ -1,47 +1,68 @@
 # PrimeGin
 
-PrimeGin 是一个基于 Go 和 Vue 的全栈项目，后端使用 Gin + Gorm框架，前端使用 Vue.js + primevue。
+PrimeGin 是一个基于 Go 和 Vue 的全栈项目，后端使用 Hertz + Gorm框架，前端使用 Vue.js + primevue。
 
 ## 项目简介
 
-PrimeGin 是一个全栈开发模板，旨在快速构建现代 Web 应用程序。后端采用 Gin 框架，结合 PostgreSQL 和 GORM 实现高效的数据处理；前端基于 Vue.js，提供响应式用户界面。
+PrimeGin 是一个全栈开发模板，旨在快速构建现代 Web 应用程序。后端采用 Hertz 框架，结合 PostgreSQL 和 GORM 实现高效的数据处理；前端基于 Vue.js，提供响应式用户界面。
 
 ## 项目结构
 
 
 ```
 # 项目目录结构
+
+```
 PrimeGin/
-├── cmd/
-│   └── server/
-│       └── main.go
-├── internal/
-│   ├── config/
-│   │   └── config.go
-│   ├── controllers/
-│   │   ├── user_controller.go
-│   │   └── auth_controller.go
-│   ├── models/
-│   │   ├── user.go
-│   │   ├── role.go
-│   │   └── permission.go
-│   ├── routes/
-│   │   └── routes.go
-│   ├── services/
-│   │   ├── user_service.go
-│   │   └── auth_service.go
-│   └── utils/
-│       └── database.go
-├── pkg/
-├── go.mod
-└── go.sum
+
+├── biz/                      # 后端业务逻辑目录
+│   ├── handler/              # HTTP请求处理器
+│   │   ├── hello/            # hello示例处理器
+│   │   └── home.go           # 首页处理器
+│   ├── middleware/           # 中间件
+│   │   └── log.go            # 日志中间件
+│   ├── model/                # 数据模型定义
+│   └── router/               # 路由配置
+│       ├── hello/            # hello路由
+│       └── routes.go         # 路由注册
+├── env.d.ts                  # 环境变量类型定义
+├── go.mod                    # Go模块定义
+├── go.sum                    # Go模块校验
+├── index.html                # 前端入口HTML
+├── main.go                   # 后端主入口
+├── package.json              # 前端依赖配置
+├── public/                   # 公共静态资源
+├── script/                   # 脚本目录
+│   └── bootstrap.sh          # 项目初始化脚本
+├── src/                      # 前端源代码
+│   ├── App.vue               # 根组件
+│   ├── assets/               # 静态资源
+│   ├── components/           # 公共组件
+│   ├── main.ts               # 前端主入口
+│   ├── router/               # 前端路由
+│   │   └── index.ts          # 路由配置
+│   ├── stores/               # 状态管理
+│   │   └── counter.ts        # 计数器状态
+│   └── views/                # 页面视图
+│       ├── AboutView.vue     # 关于页面
+│       └── HomeView.vue      # 首页
+├── vite.config.ts            # Vite构建配置
+```
+
+## 目录功能说明
+
+- **biz/**: 后端业务逻辑核心目录，包含处理器、中间件、模型和路由
+- **src/**: 前端源代码目录，包含Vue组件、路由和状态管理
+- **public/**: 公共静态资源，如favicon等
+- **script/**: 项目初始化和管理脚本
+- **config文件**: 包含项目各种配置，如TypeScript、Vite等
 ```
 
 ## 快速开始
 
 ### 后端
 
-后端使用 Gin 框架，数据库使用 PostgreSQL，ORM 使用 GORM。
+后端使用 Hertz 框架，数据库使用 PostgreSQL，ORM 使用 GORM。
 
 #### 启动后端
 
